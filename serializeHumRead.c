@@ -3,6 +3,10 @@
 const char* PERSON_FORMAT_OUT = "(%s, %d, %c)\n";
 const char* PERSON_FORMAT_IN = "(%[^,], %d, %c)";
 
+// Serialize in JSON FORMAT
+//const char* PERSON_FORMAT_IN = "{\"name\": \"%[^\"]\", \"age\":%d, \"gender\": \"%c\"}";
+//const char* PERSON_FORMAT_OUT = "{\"name\": \"%s\", \"age\":%d, \"gender\": \"%c\"}\n";
+
 typedef struct Person {
     char    name[20];
     int     age;
