@@ -1,6 +1,7 @@
 #include <stdio.h>
 
 const char* PERSON_FORMAT_OUT = "(%s, %d, %c)\n";
+const char* PERSON_FORMAT_IN = "(%[^,], %d, %c)";
 
 typedef struct Person {
     char    name[20];
@@ -29,6 +30,10 @@ int main(void) {
     // Serialization - Write data to file from memory
     fprintf(f, PERSON_FORMAT_OUT, p1.name, p1.age, p1.gender);
     fseek(f, 0, SEEK_SET);
+
+    // Deserialization - Read data from file to memory
+    fscanf(f, PERSON_FORMAT_IN, p2.name, &p2.age, &p2.gender);
+    printf("Person p2: (Name: %s, Age: %d, Gender: %c)\n", p2.name, p2.age, p2.gender);
 
     // Close file
     fclose(f);
