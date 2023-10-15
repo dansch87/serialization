@@ -10,12 +10,14 @@ typedef struct Person {
 
 int main(void) {
 
+    // Initialization of Person objects
     Person p1 = {
         .name = "Max Mustermann",
         .age = 36,
         .gender = 'M',
     };
     printf("Name: %s, Age: %d, Gender: %c\n", p1.name, p1.age, p1.gender);
+    Person p2;
 
     // Open file
     FILE *f;
